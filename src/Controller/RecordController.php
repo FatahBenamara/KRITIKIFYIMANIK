@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Artist;
+use App\Entity\Record;
 use App\Repository\ArtistRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\RecordRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class RecordController extends AbstractController
 {
@@ -18,4 +21,61 @@ class RecordController extends AbstractController
             'artist_list' => $repository->findAll(),
         ]);
     }
+
+    /**
+     * @Route("/artist/{id} ", name="artist_page")
+     */
+    public function artistPage(Artist $artist)
+    {
+
+        return $this->render('record/artist_page.html.twig', [
+            'artist' => $artist
+        ]);
+    }
+
+
+    /**
+     * @Route("/record/{id}", name="record_page")
+     */
+    public function recordPage( Record $record)
+    {
+
+  
+        return $this->render('record/record_page.html.twig', [
+        'record' => $record
+        ]);
+    
+    }
+
+
+    /**
+     * @Route("/news", name="record_news")
+     */
+    public function recordNews(RecordRepository $repository)
+    {
+        return $this->render('record/record_news.html.twig', [
+            'record_news' => $repository->findNews(),
+        ]);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

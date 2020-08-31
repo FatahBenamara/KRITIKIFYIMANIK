@@ -7,7 +7,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 class RecordFixtures extends BaseFixture implements DependentFixtureInterface
 {
     protected function loadData(){
-        $this->createMany(10, 'record',function(){
+        $this->createMany(100, 'record',function(){
             return (new Record())
 
             ->setTitle($this->faker->catchPhrase)

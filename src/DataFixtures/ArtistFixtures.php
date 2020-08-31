@@ -6,7 +6,7 @@ use App\Entity\Artist;
 class ArtistFixtures extends BaseFixture
 {
     protected function loadData(){
-        $this->createMany(20,'artist' ,function(){
+        $this->createMany(50,'artist' ,function(){
             return (new Artist())
 
                     ->setName($this->faker->name)
