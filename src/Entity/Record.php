@@ -38,6 +38,11 @@ class Record
      */
     private $releasedAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Label::class, inversedBy="records")
+     */
+    private $labell;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -87,6 +92,18 @@ class Record
     public function setReleasedAt(\DateTimeInterface $releasedAt): self
     {
         $this->releasedAt = $releasedAt;
+
+        return $this;
+    }
+
+    public function getLabell(): ?Label
+    {
+        return $this->labell;
+    }
+
+    public function setLabell(?Label $labell): self
+    {
+        $this->labell = $labell;
 
         return $this;
     }
