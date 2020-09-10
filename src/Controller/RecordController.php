@@ -9,6 +9,7 @@ use App\Repository\ArtistRepository;
 use App\Repository\RecordRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class RecordController extends AbstractController
 {
