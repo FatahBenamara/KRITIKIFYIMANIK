@@ -1,9 +1,6 @@
 <?php
 
 namespace App\DataFixtures;
-
-
-
 use App\Entity\User;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
